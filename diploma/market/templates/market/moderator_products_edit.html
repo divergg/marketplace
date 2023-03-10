@@ -1,0 +1,25 @@
+{% extends 'market/moderator_base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans "Update product" %}
+{% endblock %}
+{% block body %}
+    <br>
+    {% if images %}
+                {% for im in images %}
+                    <div class="row">
+                      <div class="column">
+                        <img src="{{ im.image.url }}" alt="img" style="width:10%">
+                      </div>
+                    </div>
+                {% endfor %}
+    {% else %}
+            <p>{% trans "There are no images of product" %}</p>
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {{ image_form.as_p }}
+          <button type="submit">Update product</button>
+    </form>
+{% endblock %}

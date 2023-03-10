@@ -1,0 +1,44 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Cart" %}
+{% endblock %}
+
+<style>
+item { white-space: nowrap; }
+.item_data { display: inline-block; }
+</style>
+
+{% block body %}
+    {% if check_cart_full %}
+            <p>{% trans "Price of items in cart" %} - {{ price }}</p>
+            <p>{% trans "List of items in cart" %}</p>
+            {% for value in items_in_cart %}
+                <div class="item">
+                    <div class="item_data">{{ value.item }} - {{ value.quantity }} {% trans 'in cart' %}</div>
+                    <div class="item_data">
+                        <form method="post">
+                            {% csrf_token %}
+                            {% trans 'Add more' %}
+                            <input type="number" min="0" name="add_more" placeholder="{% trans 'Enter quantity to add' %}">
+                            {% trans 'Add some' %}
+                            <input type="number" min="0" name="del_more" placeholder="{% trans 'Enter quantity to del' %}">
+                            <input type="hidden" name="id" value="{{ value.id }}">
+                            <button type="submit">{% trans 'Submit' %}</button>
+                        </form>
+                    </div>
+                    <div class="item_data">
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="id" value="{{ value.id }}">
+                            <input type="submit" name="delete" value="{% trans 'Delete All' %}">
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+            <a href="{% url 'order' %}">{% trans 'Create an order' %}</a>
+    {% else %}
+        <ul> {% trans "Your cart is empty" %}</ul>
+    {% endif %}
+{% endblock %}

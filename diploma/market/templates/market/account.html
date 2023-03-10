@@ -1,0 +1,36 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans 'Account' %} {{ user.username}}
+{% endblock %}
+
+<style>
+parent { white-space: nowrap; }
+.child{ display: inline-block; }
+</style>
+
+{% block body %}
+    <h3>Account base page</h3>
+    <p>Username - {{ user.username }}</p>
+    <p>Email - {{ user.email }}</p>
+    <p>Tel - {{ profile.tel }} </p>
+    <p>Name - {{ user.first_name }}</p>
+    <p>Last name - {{ user.last_name }}</p>
+    {% if profile.avatar %}
+        <img src="{{ profile.avatar.url }}" alt="avatar">
+    {% else %}
+        <p>{% trans 'Avatar is not established' %}</p>
+    {% endif %}
+    <a href="{% url 'profile' pk=profile.id %}">{% trans 'Edit profile' %}</a>
+    <p>{% trans 'History of orders' %} </p>
+    {% if orders %}
+        {% for order in orders %}
+            <div class="parent">
+                <div class="child"><a href="{% url 'history' pk=profile.id sk=order.id %}">{% trans 'Order' %} #{{ order.id }}&nbsp;&nbsp;</a></div>
+                <div class="child">{% trans 'Date' %} {{ order.date_of_order }}</div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>{% trans 'No orders yet' %}</p>
+    {% endif %}
+{% endblock %}

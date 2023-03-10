@@ -1,0 +1,31 @@
+{% extends 'market/moderator_base.html' %}
+{% load i18n %}
+{% block body %}
+    <h3>{% trans "Choose a category to edit" %}</h3>
+    <form method="POST" name="Search">
+        {% csrf_token %}
+        <input type="text" placeholder= "Search for categories" name="searcher">
+        <input type="submit" name="Search query" value="Search">
+    </form>
+    {% for cat in categories %}
+        <style>
+            #{{cat.id}} { white-space: nowrap; }
+            .child { display: inline-block; }
+        </style>
+        <div>
+            <div class="child">
+                <a href="moderator_categories/{{ cat.id }}">{{ cat.name }}</a>
+                <form method="POST" name="{{ cat.id}}">
+                {% csrf_token %}
+                 <input type="hidden" value="{{ cat.id}}" name="id">
+                 <input type="text" placeholder="Enter new name" name = 'name'>
+                 <input type="checkbox" id="Delete" name="Delete">
+                  <label for="Delete">{% trans "Delete" %}</label>
+                   <input type="submit" name="Submit">
+                </form>
+            </div>
+
+        </div>
+    {% endfor %}
+    <a href="moderator_categories_create">{% trans "Create new category" %}</a>
+{% endblock %}

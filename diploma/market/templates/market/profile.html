@@ -1,0 +1,19 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans 'Account' %} {{ user.username}}
+{% endblock %}
+
+
+{% block body %}
+    <h3>Account edition page</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ profile_form.as_p }}
+        {{ avatar_form.as_p }}
+        <button type="submit">{% trans 'Submit changes' %}</button>
+    </form>
+    <a href="{%  url 'password_change' %}">{% trans 'Change password' %}</a>
+    <a href="{% url 'account' pk=profile.id %}">{% trans 'Account main page' %}</a>
+{% endblock %}

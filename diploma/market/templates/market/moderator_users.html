@@ -1,0 +1,13 @@
+{% extends 'market/moderator_base.html' %}
+{% load i18n %}
+{% block body %}
+    <h3>{% trans "Choose a profile to edit" %}</h3>
+    <form method="POST" name="Search">
+        {% csrf_token %}
+        <input type="text" placeholder= "Search for users" name="searcher">
+        <input type="submit" name="Search query" value="Search">
+    </form>
+    {% for prof in profiles %}
+        <p><a href="moderator_users/{{ prof.id }}">{{ prof.user.username }}</a></p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'market/moderator_base.html' %}
+{% load i18n %}
+{% block body %}
+    <h3>{% trans "Choose an order to edit" %}</h3>
+    <form method="POST" name="Search">
+        {% csrf_token %}
+        <input type="text" placeholder= "Enter user name" name="searcher">
+        <input type="submit" name="Search query" value="Search">
+    </form>
+    {% for order in orders %}
+        <p><a href="moderator_orders/{{ order.id }}">Order # {{ order.id }} of user {{ order.profile }}</a></p>
+    {% endfor %}
+    {% for order in unauth_orders %}
+        <p><a href="moderator_orders/un_auth/{{ order.id }}">Order # {{ order.session_key }} of unauthorised user {{ order.name }}</a></p>
+    {% endfor %}
+{% endblock %}

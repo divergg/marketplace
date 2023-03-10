@@ -1,0 +1,38 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Order" %}
+{% endblock %}
+
+<style>
+item { white-space: nowrap; }
+.item_data { display: inline-block; }
+</style>
+
+{% block body %}
+            <p>{% trans "Price of items in order" %} - {{ price }}</p>
+            <p>{% trans "List of items in order" %}</p>
+            {% if user.is_authenticated %}
+                <p>{% trans 'Name' %} {{ order.name }}</p>
+            {% endif %}
+            {% for value in items_in_order %}
+                    <p>{{ value.item }} - {{ value.quantity }} {% trans 'in cart' %}</p>
+            {% endfor %}
+                        <form method="POST">
+                            {% csrf_token %}
+                            {% if user.is_authenticated %}
+                                <label for="tel1">{% trans 'Tel' %}</label>
+                                <input type="text" name='tel' id='tel1' pattern="(^9)([0-9]{9})" value="{{ profile.tel }}" placeholder="{{ profile.tel }}" maxlength="10" required>
+                            {% else %}
+                                <label for="enter_name">{% trans 'Enter your name' %}</label>
+                                <input type="text" id="enter_name" name="enter_name">
+                                <label for="tel2">{% trans 'Tel' %}</label>
+                                <input type="text" name='tel' id='tel2' pattern="(^9)([0-9]{9})" placeholder="91234567890" maxlength="10" required>
+                            {% endif %}
+                            {{ order_form.as_p }}
+                            <input type="hidden" name = "order_id" value="{{ order_id }}">
+                            <button type="submit">{% trans 'Proceed to payment' %}</button>
+                        </form>
+    <a href="{% url 'cart' %}">{% trans 'Back to cart' %}</a>
+{% endblock %}

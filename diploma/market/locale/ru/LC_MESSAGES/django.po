@@ -1,0 +1,621 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-02 01:40+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\market\forms.py:11
+msgid "Username"
+msgstr ""
+
+#: .\market\forms.py:14
+msgid "Password"
+msgstr ""
+
+#: .\market\forms.py:20
+msgid "First name"
+msgstr ""
+
+#: .\market\forms.py:23
+msgid "Last name"
+msgstr ""
+
+#: .\market\forms.py:26 .\market\templates\market\order.html:25
+#: .\market\templates\market\order.html:30
+msgid "Tel"
+msgstr ""
+
+#: .\market\forms.py:31
+msgid "Email"
+msgstr ""
+
+#: .\market\forms.py:75
+msgid "Image"
+msgstr ""
+
+#: .\market\forms.py:80
+msgid "Quantity of items"
+msgstr ""
+
+#: .\market\forms.py:89
+msgid "Min price"
+msgstr ""
+
+#: .\market\forms.py:95
+msgid "Max price"
+msgstr ""
+
+#: .\market\forms.py:125
+msgid "Avatar"
+msgstr ""
+
+#: .\market\forms.py:132 .\market\models.py:174 .\market\models.py:240
+msgid "card"
+msgstr ""
+
+#: .\market\forms.py:133 .\market\models.py:175 .\market\models.py:241
+msgid "random"
+msgstr ""
+
+#: .\market\forms.py:137 .\market\models.py:184 .\market\models.py:245
+msgid "delivery"
+msgstr ""
+
+#: .\market\forms.py:138 .\market\models.py:185 .\market\models.py:246
+msgid "in shop"
+msgstr ""
+
+#: .\market\forms.py:146
+msgid "Please enter an even number."
+msgstr ""
+
+#: .\market\models.py:12
+msgid "admin"
+msgstr ""
+
+#: .\market\models.py:13 .\market\models.py:22
+msgid "user"
+msgstr ""
+
+#: .\market\models.py:17 .\market\models.py:70 .\market\models.py:89
+#: .\market\models.py:179 .\market\models.py:250
+msgid "Active"
+msgstr ""
+
+#: .\market\models.py:18 .\market\models.py:71 .\market\models.py:90
+#: .\market\models.py:180 .\market\models.py:251
+msgid "Not active"
+msgstr ""
+
+#: .\market\models.py:25
+msgid "admin status"
+msgstr ""
+
+#: .\market\models.py:30
+msgid "userPic"
+msgstr ""
+
+#: .\market\models.py:33
+msgid "activity status"
+msgstr ""
+
+#: .\market\models.py:36 .\market\models.py:211 .\market\models.py:273
+msgid "tel"
+msgstr ""
+
+#: .\market\models.py:51
+msgid "profile"
+msgstr ""
+
+#: .\market\models.py:52
+msgid "profiles"
+msgstr ""
+
+#: .\market\models.py:60
+msgid "cart"
+msgstr ""
+
+#: .\market\models.py:63
+msgid "price of items in cart"
+msgstr ""
+
+#: .\market\models.py:76
+msgid "category name"
+msgstr ""
+
+#: .\market\models.py:80 .\market\models.py:111 .\market\models.py:202
+#: .\market\models.py:267
+msgid "status"
+msgstr ""
+
+#: .\market\models.py:95 .\market\models.py:285
+msgid "name"
+msgstr ""
+
+#: .\market\models.py:98 .\market\models.py:231 .\market\models.py:301
+msgid "price"
+msgstr ""
+
+#: .\market\models.py:101 .\market\models.py:314
+msgid "description"
+msgstr ""
+
+#: .\market\models.py:104
+msgid "date added"
+msgstr ""
+
+#: .\market\models.py:107
+msgid "purchase times"
+msgstr ""
+
+#: .\market\models.py:118 .\market\models.py:336
+msgid "reviews"
+msgstr ""
+
+#: .\market\models.py:121
+msgid "number of reviews"
+msgstr ""
+
+#: .\market\models.py:124
+msgid "limited offer"
+msgstr ""
+
+#: .\market\models.py:135
+msgid "pic"
+msgstr ""
+
+#: .\market\models.py:145 .\market\models.py:166
+msgid "number of items in cart"
+msgstr ""
+
+#: .\market\models.py:148
+msgid "item_in_cart"
+msgstr ""
+
+#: .\market\models.py:149
+msgid "items_in_cart"
+msgstr ""
+
+#: .\market\models.py:164 .\market\models.py:255
+msgid "session key"
+msgstr ""
+
+#: .\market\models.py:192 .\market\models.py:258 .\market\models.py:311
+msgid "date created"
+msgstr ""
+
+#: .\market\models.py:195 .\market\models.py:261
+msgid "payment method"
+msgstr ""
+
+#: .\market\models.py:198 .\market\models.py:264
+msgid "payment_status"
+msgstr ""
+
+#: .\market\models.py:205 .\market\models.py:270
+msgid "delivery method"
+msgstr ""
+
+#: .\market\models.py:208 .\market\models.py:276
+msgid "price of order"
+msgstr ""
+
+#: .\market\models.py:214 .\market\models.py:279
+msgid "city"
+msgstr ""
+
+#: .\market\models.py:217 .\market\models.py:282
+msgid "adress"
+msgstr ""
+
+#: .\market\models.py:220 .\market\models.py:288
+msgid "error"
+msgstr ""
+
+#: .\market\models.py:228 .\market\models.py:298
+msgid "number of items in order"
+msgstr ""
+
+#: .\market\models.py:317
+msgid "author"
+msgstr ""
+
+#: .\market\models.py:335
+msgid "review"
+msgstr ""
+
+#: .\market\templates\market\account.html:4
+#: .\market\templates\market\profile.html:4
+msgid "Account"
+msgstr ""
+
+#: .\market\templates\market\account.html:22
+msgid "Avatar is not established"
+msgstr ""
+
+#: .\market\templates\market\account.html:24
+msgid "Edit profile"
+msgstr ""
+
+#: .\market\templates\market\account.html:25
+msgid "History of orders"
+msgstr ""
+
+#: .\market\templates\market\account.html:29
+#: .\market\templates\market\confirmation.html:9
+#: .\market\templates\market\history.html:4
+#: .\market\templates\market\order.html:5
+msgid "Order"
+msgstr ""
+
+#: .\market\templates\market\account.html:30
+#: .\market\templates\market\history.html:13
+msgid "Date"
+msgstr ""
+
+#: .\market\templates\market\account.html:34
+msgid "No orders yet"
+msgstr ""
+
+#: .\market\templates\market\cart.html:5
+msgid "Cart"
+msgstr ""
+
+#: .\market\templates\market\cart.html:15
+msgid "Price of items in cart"
+msgstr ""
+
+#: .\market\templates\market\cart.html:16
+msgid "List of items in cart"
+msgstr ""
+
+#: .\market\templates\market\cart.html:19
+#: .\market\templates\market\order.html:20
+msgid "in cart"
+msgstr ""
+
+#: .\market\templates\market\cart.html:23
+msgid "Add more"
+msgstr ""
+
+#: .\market\templates\market\cart.html:24
+msgid "Enter quantity to add"
+msgstr ""
+
+#: .\market\templates\market\cart.html:25
+msgid "Add some"
+msgstr ""
+
+#: .\market\templates\market\cart.html:26
+msgid "Enter quantity to del"
+msgstr ""
+
+#: .\market\templates\market\cart.html:28
+#: .\market\templates\market\password_change.html:10
+msgid "Submit"
+msgstr ""
+
+#: .\market\templates\market\cart.html:35
+msgid "Delete All"
+msgstr ""
+
+#: .\market\templates\market\cart.html:40
+msgid "Create an order"
+msgstr ""
+
+#: .\market\templates\market\cart.html:42
+msgid "Your cart is empty"
+msgstr ""
+
+#: .\market\templates\market\catalogue.html:18
+msgid "Sort by"
+msgstr ""
+
+#: .\market\templates\market\catalogue.html:29
+msgid "Sort"
+msgstr ""
+
+#: .\market\templates\market\catalogue.html:37
+#: .\market\templates\market\main.html:16
+#: .\market\templates\market\product.html:19
+msgid "Number of reviews "
+msgstr ""
+
+#: .\market\templates\market\catalogue.html:46
+msgid "Add to cart"
+msgstr ""
+
+#: .\market\templates\market\confirmation.html:5
+msgid "Payment confirmed"
+msgstr ""
+
+#: .\market\templates\market\confirmation.html:9
+msgid "is  paid"
+msgstr ""
+
+#: .\market\templates\market\error.html:5
+msgid "Payment error"
+msgstr ""
+
+#: .\market\templates\market\error.html:9
+msgid "Payment of order"
+msgstr ""
+
+#: .\market\templates\market\error.html:9
+msgid "is  failed"
+msgstr ""
+
+#: .\market\templates\market\header.html:29
+msgid "Category"
+msgstr ""
+
+#: .\market\templates\market\header.html:40
+msgid "With reviews only"
+msgstr ""
+
+#: .\market\templates\market\history.html:14
+msgid "Total price"
+msgstr ""
+
+#: .\market\templates\market\history.html:15
+msgid "Payment method"
+msgstr ""
+
+#: .\market\templates\market\history.html:16
+msgid "Delivery method"
+msgstr ""
+
+#: .\market\templates\market\history.html:17
+msgid "Contents of order"
+msgstr ""
+
+#: .\market\templates\market\history.html:30
+msgid "Order is paid"
+msgstr ""
+
+#: .\market\templates\market\history.html:32
+msgid "Order is not paid "
+msgstr ""
+
+#: .\market\templates\market\history.html:33
+#: .\market\templates\market\order.html:35
+msgid "Proceed to payment"
+msgstr ""
+
+#: .\market\templates\market\history.html:35
+#: .\market\templates\market\profile.html:18
+msgid "Account main page"
+msgstr ""
+
+#: .\market\templates\market\main.html:11
+msgid "Limited offers"
+msgstr ""
+
+#: .\market\templates\market\moderator_base.html:8
+msgid "Moderator chapter"
+msgstr ""
+
+#: .\market\templates\market\moderator_categories.html:4
+msgid "Choose a category to edit"
+msgstr ""
+
+#: .\market\templates\market\moderator_categories.html:23
+#: .\market\templates\market\moderator_products.html:16
+msgid "Delete"
+msgstr ""
+
+#: .\market\templates\market\moderator_categories.html:30
+msgid "Create new category"
+msgstr ""
+
+#: .\market\templates\market\moderator_categories_edit.html:4
+msgid "All items in category"
+msgstr ""
+
+#: .\market\templates\market\moderator_categories_edit.html:22
+msgid "Delete from category"
+msgstr ""
+
+#: .\market\templates\market\moderator_header.html:10
+msgid "Admin chapter"
+msgstr ""
+
+#: .\market\templates\market\moderator_header.html:14
+msgid "Categories "
+msgstr ""
+
+#: .\market\templates\market\moderator_header.html:15
+msgid "Orders"
+msgstr ""
+
+#: .\market\templates\market\moderator_header.html:16
+msgid "Products"
+msgstr ""
+
+#: .\market\templates\market\moderator_header.html:17
+msgid "Users"
+msgstr ""
+
+#: .\market\templates\market\moderator_orders.html:4
+msgid "Choose an order to edit"
+msgstr ""
+
+#: .\market\templates\market\moderator_products.html:4
+msgid "Choose a product to edit"
+msgstr ""
+
+#: .\market\templates\market\moderator_products.html:23
+msgid "Create new product"
+msgstr ""
+
+#: .\market\templates\market\moderator_products_edit.html:4
+msgid "Update product"
+msgstr ""
+
+#: .\market\templates\market\moderator_products_edit.html:17
+msgid "There are no images of product"
+msgstr ""
+
+#: .\market\templates\market\moderator_users.html:4
+msgid "Choose a profile to edit"
+msgstr ""
+
+#: .\market\templates\market\order.html:14
+msgid "Price of items in order"
+msgstr ""
+
+#: .\market\templates\market\order.html:15
+msgid "List of items in order"
+msgstr ""
+
+#: .\market\templates\market\order.html:17
+msgid "Name"
+msgstr ""
+
+#: .\market\templates\market\order.html:28
+msgid "Enter your name"
+msgstr ""
+
+#: .\market\templates\market\order.html:37
+msgid "Back to cart"
+msgstr ""
+
+#: .\market\templates\market\password_change.html:4
+#: .\market\templates\market\profile.html:17
+#: .\market\templates\password_reset\password_reset_confirm.html:10
+#: .\market\templates\password_reset\password_reset_confirm.html:14
+msgid "Change password"
+msgstr ""
+
+#: .\market\templates\market\password_change_done.html:4
+msgid "Success"
+msgstr ""
+
+#: .\market\templates\market\password_change_done.html:7
+msgid "Your password has been changed"
+msgstr ""
+
+#: .\market\templates\market\payment.html:5
+msgid "Payment confirmation"
+msgstr ""
+
+#: .\market\templates\market\payment.html:14
+msgid "Price of order (including delivery)"
+msgstr ""
+
+#: .\market\templates\market\payment.html:15
+msgid "Your payment method"
+msgstr ""
+
+#: .\market\templates\market\payment.html:20
+msgid "Generate random num"
+msgstr ""
+
+#: .\market\templates\market\payment.html:22
+msgid "Random card number"
+msgstr ""
+
+#: .\market\templates\market\payment.html:28
+#: .\market\templates\market\payment.html:35
+msgid "Pay"
+msgstr ""
+
+#: .\market\templates\market\product.html:26
+msgid "Add to a cart"
+msgstr ""
+
+#: .\market\templates\market\product.html:30
+msgid "Description"
+msgstr ""
+
+#: .\market\templates\market\product.html:37
+msgid "Reviews"
+msgstr ""
+
+#: .\market\templates\market\product.html:41
+msgid "Add review"
+msgstr ""
+
+#: .\market\templates\market\product.html:45
+msgid "Author - "
+msgstr ""
+
+#: .\market\templates\market\product.html:47
+msgid "Date of creation "
+msgstr ""
+
+#: .\market\templates\market\product.html:53
+msgid "See more reviews"
+msgstr ""
+
+#: .\market\templates\market\product.html:59
+msgid "Go to the top"
+msgstr ""
+
+#: .\market\templates\market\profile.html:15
+msgid "Submit changes"
+msgstr ""
+
+#: .\market\templates\market\sign_in.html:5
+#: .\market\templates\market\sign_in.html:12
+msgid "Sign in"
+msgstr ""
+
+#: .\market\templates\market\sign_up.html:5
+#: .\market\templates\market\sign_up.html:13
+msgid "Sign up"
+msgstr ""
+
+#: .\market\templates\password_reset\password_reset_complete.html:5
+#: .\market\templates\password_reset\password_reset_confirm.html:5
+#: .\market\templates\password_reset\password_reset_done.html:5
+#: .\market\templates\password_reset\password_reset_form.html:6
+msgid "Password reset"
+msgstr ""
+
+#: .\market\templates\password_reset\password_reset_complete.html:9
+msgid "Your password has been set. You may go ahead and"
+msgstr ""
+
+#: .\market\templates\password_reset\password_reset_complete.html:9
+msgid "sign in"
+msgstr ""
+
+#: .\market\templates\password_reset\password_reset_complete.html:9
+msgid "now"
+msgstr ""
+
+#: .\market\templates\password_reset\password_reset_done.html:10
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly"
+msgstr ""
+
+#: .\market\templates\password_reset\password_reset_done.html:13
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder"
+msgstr ""
+
+#: .\market\templates\password_reset\password_reset_form.html:10
+msgid "Password Reset Request"
+msgstr ""
+
+#: .\market\views.py:196
+msgid "There are no reviews yet"
+msgstr ""

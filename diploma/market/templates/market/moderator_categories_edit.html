@@ -1,0 +1,28 @@
+{% extends 'market/moderator_base.html' %}
+{% load i18n %}
+{% block body %}
+    <h3>{% trans "All items in category" %} {{ category }}</h3>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder= "Search for items" name="searcher">
+        <input type="submit" name="Search query" value="Search">
+    </form>
+    {% for item in items %}
+        <style>
+            #{{item.id}} { white-space: nowrap; }
+            .child { display: inline-block; }
+        </style>
+        <div>
+            <div class="child">
+                <p><a href="moderator_products/{{ item.id }}">{{ item.name }}</a></p>
+                <form method="POST" name="{{ item.id}}">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{ item.id }}" name="id">
+                    <input type="checkbox" id="Delete" name="Delete">
+                    <label for="Delete">{% trans "Delete from category" %}</label>
+                    <input type="submit" name="Submit">
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

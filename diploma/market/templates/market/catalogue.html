@@ -1,0 +1,55 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+{% block body %}
+{% load categories %}
+{% images as images %}
+
+
+<style>
+#topnav { white-space: nowrap; }
+.child { display: inline-block; }
+
+#item { white-space: nowrap; }
+.item_data { display: inline-block; }
+</style>
+
+<div class="topnav">
+     <div class="child"><h3>Current category is {{ category.name }}&nbsp;&nbsp</h3></div>
+      <div class="child"><label for="sort_q">{% trans "Sort by" %}</label></div>
+            <div class="child"></div>
+      <div class="child">
+          <form method="post">
+              {% csrf_token %}
+              <select name="sort_query" id="sort_q">
+                <option value="Name">Name</option>
+                <option value="Price">Price</option>
+            </select>
+              <input type="hidden" name="items_data" value="{{ serialized_items }}">
+              <input type="hidden" name="category_data" value="{{ serialized_category }}">
+              <input type="submit" value="{% trans 'Sort' %}">
+          </form>
+      </div>
+</div>
+{% for it in items %}
+    <div class="item">
+        <div class="item_data"><a href="catalogue/{{ it.id }}">{{ it.name }}</a></div>
+        <div class="item_data">{{ it.price }}$ &nbsp;&nbsp</div>
+        <div class="item_data"><a href="catalogue/{{ it.id }}#reviews">{% trans 'Number of reviews ' %}</a>{{ it.number_of_reviews }} </div>
+        {% for key, value in images.items %}
+            {% if key == it %}
+                <div class="item_data"><img src="{{ value.image.url }}" alt="img" style="width:50px;height:50px;"></div>
+            {% endif %}
+        {% endfor %}
+            <div class="item_data">
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="{% trans 'Add to cart' %}" name="add_to_cart">
+                    <input type="hidden" value="{{ it.id }}" name="item_added">
+                    <input type="hidden" name="items_data" value="{{ serialized_items }}">
+                    <input type="hidden" name="category_data" value="{{ serialized_category }}">
+                </form>
+            </div>
+    </div>
+    <p> {{ it.description|truncatechars:10 }}</p>
+{% endfor %}
+{% endblock %}

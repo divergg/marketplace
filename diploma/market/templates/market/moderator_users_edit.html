@@ -1,0 +1,12 @@
+{% extends 'market/moderator_base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans "Update profile"}
+{% endblock %}
+{% block body %}
+    <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Update profile</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Payment error" %}
+{% endblock %}
+
+{% block body %}
+<p>{% trans 'Payment of order' %} {{ param }} {% trans 'is  failed' %}</p>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Payment confirmation" %}
+{% endblock %}
+
+<style>
+item { white-space: nowrap; }
+.item_data { display: inline-block; }
+</style>
+
+{% block body %}
+            <p>{% trans "Price of order (including delivery)" %} - {{ order.price }}</p>
+            <p>{% trans 'Your payment method' %} - {{ order.payment_method }}</p>
+            {% if random_button %}
+                <form method="GET" action="{% url 'payment' pk=param %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="random_card" value="1">
+                    <button type="submit">{% trans 'Generate random num' %}</button>
+                </form>
+                <label for="rand">{% trans 'Random card number' %}</label>
+                    {% if random_num %}
+                        <p id="rand">{{ random_num }}</p>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{random_num}}" name="random_num">
+                            <button type="submit">{% trans 'Pay' %}</button>
+                        </form>
+                    {% endif %}
+            {% else %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ payment_form.as_p }}
+                    <button type="submit">{% trans 'Pay' %}</button>
+                </form>
+            {% endif %}
+{% endblock %}

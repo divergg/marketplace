@@ -1,0 +1,10 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Payment confirmed" %}
+{% endblock %}
+
+{% block body %}
+<p>{% trans 'Order' %} {{ param }} {% trans 'is  paid' %}</p>
+{% endblock %}

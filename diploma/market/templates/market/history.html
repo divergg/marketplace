@@ -1,0 +1,36 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans 'Order' %} {{ order.id }}
+{% endblock %}
+
+<style>
+parent { white-space: nowrap; }
+.child{ display: inline-block; }
+</style>
+
+{% block body %}
+    <p>{% trans 'Date' %} - {{ order.date_of_order }}</p>
+    <p>{% trans 'Total price' %} - {{order.price}}</p>
+    <p>{% trans 'Payment method' %} - {{order.payment_method}}</p>
+    <p>{% trans 'Delivery method' %} - {{order.delivery_method}}</p>
+    <p>{% trans 'Contents of order' %}</p>
+    {% for item in items %}
+        <div class="parent">
+            <div class="child">Item - {{item.item}}</div>
+            <div class="child">Price - {{item.price_of_item}}</div>
+            <div class="child">Quantity - {{item.quantity}}</div>
+            <br>
+        </div>
+    {% endfor %}
+    {% if order.error %}
+        <p>{{ order.error }}</p>
+    {% endif %}
+    {% if payment_status %}
+        <p>{% trans 'Order is paid' %}</p>
+    {% else %}
+        <p>{% trans 'Order is not paid '%}</p>
+        <a href="{% url 'payment' pk=order.id %}">{% trans 'Proceed to payment' %}</a>
+    {% endif %}
+    <a href="{% url 'account' pk=profile.id %}">{% trans 'Account main page' %}</a>
+{% endblock %}

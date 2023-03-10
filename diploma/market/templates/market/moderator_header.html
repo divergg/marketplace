@@ -1,0 +1,19 @@
+{% load i18n %}
+<style>
+</style>
+<header>
+    <hr size="20" color="blue">
+    <table>
+        <tr>
+            <th><img src="http:\\localhost:8000\media\logo.png/"" alt="logo"></th>
+            <th></th>
+            <th><h2 style="">{% trans "Admin chapter" %}</h2></th>
+        </tr>
+    </table>
+    <div class="topnav">
+        <a href="{% url 'moderator_categories' %}">{% trans "Categories " %}</a>
+        <a href="{% url 'moderator_orders' %}">{% trans "Orders" %}</a>
+        <a href="{% url 'moderator_products' %}">{% trans "Products" %}</a>
+        <a href="{% url 'moderator_users' %}">{% trans "Users" %}</a>
+    </div>
+</header>

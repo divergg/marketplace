@@ -1,0 +1,60 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+{% load categories %}
+{% images as images %}
+
+{% block title %}
+   {{ item }}
+{% endblock %}
+{% block body %}
+
+<style>
+item { white-space: nowrap; }
+.item_data { display: inline-block; }
+</style>
+<h3 id="top">{{ item.name }}</h3>
+<div class="item">
+        <div class="item_data">{{ item.name }}</div>
+        <div class="item_data">{{ item.price }}$ &nbsp;&nbsp</div>
+        <div class="item_data">{% trans 'Number of reviews ' %}{{ item.number_of_reviews }} </div>
+</div>
+
+          <form method="post">
+                 {% csrf_token %}
+                  <div class="item">
+                        <div class="item_data"> {{ buy_form.as_p }} </div>
+                        <div class="item_data"> <input type="submit" value="{% trans 'Add to a cart' %}"> </div>
+                 </div>
+          </form>
+
+<h4>{% trans "Description" %}</h4>
+<p>{{ item.description }}</p>
+{% if images %}
+        {% for image in images %}
+                <a href="{{image.image.url}}"><img src="{{image.image.url}}" alt="img" style="width:100px;height:100px;"></a>
+        {% endfor %}
+{% endif %}
+<h4 id="reviews">{% trans "Reviews" %}</h4>
+<form method="post">
+    {% csrf_token %}
+    {{ review_form.as_p }}
+    <button type="submit">{% trans 'Add review' %}</button>
+</form>
+{% if reviews_exist %}
+        {% for rev in reviews %}
+                <p>{% trans 'Author - ' %} {{ rev.author }}</p>
+                <p>{{ rev.description }}</p>
+                <p>{% trans "Date of creation "%} {{ rev.date_created }}</p>
+        {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        {% if rev_add %}
+            <input type="hidden" value="{{ rev_num }}" name="number_of_reviews">
+            <button type="submit">{% trans 'See more reviews' %}"</button>
+        {% endif %}
+    </form>
+{% else %}
+        <p>{{ reviews }}</p>
+{% endif %}
+<a href="#top">{% trans 'Go to the top' %}</a>
+{% endblock %}

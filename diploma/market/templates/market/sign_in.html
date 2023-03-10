@@ -1,0 +1,14 @@
+{% extends 'market/base.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% trans "Sign in" %}
+{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% trans "Sign in" %}</button>
+    </form>
+{% endblock %}
